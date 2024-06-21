@@ -11,6 +11,7 @@
 		FA97C6072C25A8EC001044D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97C6062C25A8EC001044D1 /* ContentView.swift */; };
 		FA97C6092C25A8EF001044D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA97C6082C25A8EF001044D1 /* Assets.xcassets */; };
 		FA97C60C2C25A8EF001044D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA97C60B2C25A8EF001044D1 /* Preview Assets.xcassets */; };
+		FA97C6132C25FE6E001044D1 /* LocationsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97C6122C25FE6E001044D1 /* LocationsDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		FA97C6062C25A8EC001044D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA97C6082C25A8EF001044D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA97C60B2C25A8EF001044D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA97C6122C25FE6E001044D1 /* LocationsDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				FA97C6042C25A8EC001044D1 /* MapJourneySwiftUIApp.swift */,
 				FA97C6062C25A8EC001044D1 /* ContentView.swift */,
+				FA97C6122C25FE6E001044D1 /* LocationsDataService.swift */,
 				FA97C6082C25A8EF001044D1 /* Assets.xcassets */,
 				FA97C60A2C25A8EF001044D1 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				FA97C6072C25A8EC001044D1 /* ContentView.swift in Sources */,
 				FA97C6052C25A8EC001044D1 /* MapJourneySwiftUIApp.swift in Sources */,
+				FA97C6132C25FE6E001044D1 /* LocationsDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
