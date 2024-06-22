@@ -11,6 +11,7 @@ import SwiftUI
 
 class LocationsViewModel: ObservableObject {
     @Published var locations: [Location]
+    @Published var showLocationList: Bool = false
     @Published var locationPoint: Location {
         didSet {
             updateMapRegion(location: locationPoint)
@@ -30,6 +31,19 @@ class LocationsViewModel: ObservableObject {
     private func updateMapRegion(location: Location) {
         withAnimation(.easeIn) {
             coordinateRegion = MKCoordinateRegion(center: location.coordinates, span: mapSpan)
+        }
+    }
+    
+    func toogleLocationList() {
+        withAnimation(.easeIn) {
+            showLocationList.toggle()
+        }
+    }
+    
+    func showNextLocation(location: Location) {
+        withAnimation(.easeIn) {
+            locationPoint = location
+            showLocationList.toggle()
         }
     }
 }

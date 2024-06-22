@@ -35,18 +35,25 @@ struct LocationsView_Previews: PreviewProvider {
 extension LocationsView {
     private var header: some View {
         VStack {
-            Text("\(vm.locationPoint.name), \(vm.locationPoint.cityName)")
-                .font(.title2)
-                .fontWeight(.black)
-                .foregroundColor(.primary)
-                .frame(height: 55)
-                .frame(maxWidth: .infinity)
-                .overlay(alignment: .leading) {
-                    Image(systemName: "arrow.down")
-                        .font(.headline)
-                        .foregroundColor(.primary)
-                        .padding()
-                }
+            Button(action: vm.toogleLocationList, label: {
+                Text("\(vm.locationPoint.name), \(vm.locationPoint.cityName)")
+                    .font(.title2)
+                    .fontWeight(.black)
+                    .foregroundColor(.primary)
+                    .frame(height: 55)
+                    .frame(maxWidth: .infinity)
+                    .animation(.none, value: vm.locationPoint)
+                    .overlay(alignment: .leading) {
+                        Image(systemName: "arrow.down")
+                            .font(.headline)
+                            .foregroundColor(.primary)
+                            .padding()
+                            .rotationEffect(Angle(degrees: vm.showLocationList ? 180: 0))
+                    }
+            })
+            if vm.showLocationList {
+                LocationsListView()
+            }
         }
         .background(.thickMaterial)
         .cornerRadius(10)
