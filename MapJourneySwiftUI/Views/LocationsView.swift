@@ -13,7 +13,7 @@ struct LocationsView: View {
     @State var coordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 41.8902, longitude: 12.4922), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
     
     var body: some View {
-        Map(coordinateRegion: $coordinateRegion)
+        Map(coordinateRegion: $vm.coordinateRegion)
             .ignoresSafeArea()
     }
 }
