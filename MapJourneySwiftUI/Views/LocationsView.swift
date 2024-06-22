@@ -13,8 +13,15 @@ struct LocationsView: View {
     @State var coordinateRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 41.8902, longitude: 12.4922), span: MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1))
     
     var body: some View {
-        Map(coordinateRegion: $vm.coordinateRegion)
-            .ignoresSafeArea()
+        ZStack {
+            Map(coordinateRegion: $vm.coordinateRegion)
+                .ignoresSafeArea()
+            VStack(spacing: 0) {
+                header
+                
+                Spacer()
+            }
+        }
     }
 }
 
@@ -22,5 +29,28 @@ struct LocationsView_Previews: PreviewProvider {
     static var previews: some View {
         LocationsView()
             .environmentObject(LocationsViewModel())
+    }
+}
+
+extension LocationsView {
+    private var header: some View {
+        VStack {
+            Text("\(vm.locationPoint.name), \(vm.locationPoint.cityName)")
+                .font(.title2)
+                .fontWeight(.black)
+                .foregroundColor(.primary)
+                .frame(height: 55)
+                .frame(maxWidth: .infinity)
+                .overlay(alignment: .leading) {
+                    Image(systemName: "arrow.down")
+                        .font(.headline)
+                        .foregroundColor(.primary)
+                        .padding()
+                }
+        }
+        .background(.thickMaterial)
+        .cornerRadius(10)
+        .shadow(color: .black.opacity(0.3), radius: 20, x: 0, y: 15)
+        .padding()
     }
 }
