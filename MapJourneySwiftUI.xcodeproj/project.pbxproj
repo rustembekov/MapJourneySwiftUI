@@ -8,21 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		FA97C6052C25A8EC001044D1 /* MapJourneySwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97C6042C25A8EC001044D1 /* MapJourneySwiftUIApp.swift */; };
-		FA97C6072C25A8EC001044D1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97C6062C25A8EC001044D1 /* ContentView.swift */; };
 		FA97C6092C25A8EF001044D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA97C6082C25A8EF001044D1 /* Assets.xcassets */; };
 		FA97C60C2C25A8EF001044D1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA97C60B2C25A8EF001044D1 /* Preview Assets.xcassets */; };
 		FA97C6132C25FE6E001044D1 /* LocationsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97C6122C25FE6E001044D1 /* LocationsDataService.swift */; };
 		FA97C6192C2602C7001044D1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97C6182C2602C7001044D1 /* Location.swift */; };
+		FA97C61C2C26150E001044D1 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97C61B2C26150E001044D1 /* LocationsView.swift */; };
+		FA97C61E2C26A43D001044D1 /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97C61D2C26A43D001044D1 /* LocationsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA97C6012C25A8EC001044D1 /* MapJourneySwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapJourneySwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA97C6042C25A8EC001044D1 /* MapJourneySwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapJourneySwiftUIApp.swift; sourceTree = "<group>"; };
-		FA97C6062C25A8EC001044D1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA97C6082C25A8EF001044D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA97C60B2C25A8EF001044D1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FA97C6122C25FE6E001044D1 /* LocationsDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsDataService.swift; sourceTree = "<group>"; };
 		FA97C6182C2602C7001044D1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		FA97C61B2C26150E001044D1 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		FA97C61D2C26A43D001044D1 /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +62,6 @@
 				FA97C6152C26026B001044D1 /* ViewModels */,
 				FA97C6162C260277001044D1 /* Models */,
 				FA97C61A2C2603B4001044D1 /* DataService */,
-				FA97C6062C25A8EC001044D1 /* ContentView.swift */,
 				FA97C6082C25A8EF001044D1 /* Assets.xcassets */,
 				FA97C60A2C25A8EF001044D1 /* Preview Content */,
 			);
@@ -78,6 +79,7 @@
 		FA97C6142C26025D001044D1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FA97C61B2C26150E001044D1 /* LocationsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -85,6 +87,7 @@
 		FA97C6152C26026B001044D1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				FA97C61D2C26A43D001044D1 /* LocationsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -183,8 +186,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA97C6072C25A8EC001044D1 /* ContentView.swift in Sources */,
+				FA97C61E2C26A43D001044D1 /* LocationsViewModel.swift in Sources */,
 				FA97C6052C25A8EC001044D1 /* MapJourneySwiftUIApp.swift in Sources */,
+				FA97C61C2C26150E001044D1 /* LocationsView.swift in Sources */,
 				FA97C6192C2602C7001044D1 /* Location.swift in Sources */,
 				FA97C6132C25FE6E001044D1 /* LocationsDataService.swift in Sources */,
 			);
