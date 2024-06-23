@@ -17,23 +17,17 @@ struct LocationsView: View {
     
     var body: some View {
         ZStack {
-            Map(coordinateRegion: $vm.coordinateRegion)
+            annotatedMap
                 .ignoresSafeArea()
             VStack(spacing: 0) {
                 header
                     .padding()
                 Spacer()
-                ZStack {
-                    ForEach(vm.locations) { location in
-                        if vm.locationPoint == location {
-                            LocationDetailView(location: location)
-                                .shadow(color: Color.black.opacity(0.3), radius: 20)
-                                .padding()
-                                .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
-                        }
-                    }
-                }
+                locationDetailsPreview
             }
+        }
+        .sheet(item: $vm.showLocationSheet) { location in
+            LocationsDescriptionView(location: location)
         }
     }
 }
@@ -46,6 +40,19 @@ struct LocationsView_Previews: PreviewProvider {
 }
 
 extension LocationsView {
+    private var annotatedMap: some View {
+        Map(coordinateRegion: $vm.coordinateRegion, annotationItems: vm.locations, annotationContent: { location in
+            MapAnnotation(coordinate: location.coordinates) {
+                LocationMapAnnotationView()
+                    .scaleEffect(vm.locationPoint == location ? 1 : 0.7)
+                    .shadow(radius: 10)
+                    .onTapGesture {
+                        vm.showNextLocation(location: location)
+                    }
+            }
+        })
+    }
+    
     private var header: some View {
         VStack {
             Button(action: vm.toogleLocationList) {
@@ -73,5 +80,18 @@ extension LocationsView {
         .background(.thickMaterial)
         .cornerRadius(10)
         .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 15)
+    }
+    
+    private var locationDetailsPreview: some View {
+        ZStack {
+            ForEach(vm.locations) { location in
+                if vm.locationPoint == location {
+                    LocationDetailView(location: location)
+                        .shadow(color: Color.black.opacity(0.3), radius: 20)
+                        .padding()
+                        .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
+                }
+            }
+        }
     }
 }

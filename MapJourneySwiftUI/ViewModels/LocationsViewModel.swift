@@ -12,6 +12,8 @@ import SwiftUI
 class LocationsViewModel: ObservableObject {
     @Published var locations: [Location]
     @Published var showLocationList: Bool = false
+    @Published var showLocationSheet: Location? = nil
+    
     @Published var locationPoint: Location {
         didSet {
             updateMapRegion(location: locationPoint)
