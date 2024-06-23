@@ -10,8 +10,8 @@ import SwiftUI
 struct LocationDetailView: View {
     let location: Location
     var body: some View {
-        HStack {
-            VStack(spacing: 16) {
+        HStack(alignment: .bottom, spacing: 0) {
+            VStack(alignment: .leading, spacing: 16) {
                 imagePreview
                 titlePreview
             }
@@ -20,6 +20,13 @@ struct LocationDetailView: View {
                 buttonNext
             }
         }
+        .padding(20)
+        .background(
+            RoundedRectangle(cornerRadius: 10)
+                .fill(.regularMaterial)
+                .offset(y: 65)
+        )
+        .clipped()
     }
 }
 
@@ -30,6 +37,7 @@ struct LocationDetailView_Previews: PreviewProvider {
             Color.blue
                 .ignoresSafeArea()
             LocationDetailView(location: LocationsDataService.locations.first!)
+                .padding()
         }
     }
 }
@@ -59,6 +67,7 @@ extension LocationDetailView {
             Text(location.cityName)
                 .font(.headline)
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
     
     private var buttonLearnMore: some View {

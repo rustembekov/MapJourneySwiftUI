@@ -11,15 +11,23 @@ struct LocationsListView: View {
     @EnvironmentObject private var vm: LocationsViewModel
     var body: some View {
         List {
-            ForEach(vm.locations) { location in
-                Button {
-                    vm.showNextLocation(location: location)
-                } label: {
-                    listRowView(location: location)
+            ScrollView {
+                VStack {
+                    ForEach(vm.locations) { location in
+                        Button {
+                            vm.showNextLocation(location: location)
+                        } label: {
+                            listRowView(location: location)
+                        }
+                        .padding(.vertical, 4)
+                        .background(Color.clear)
+                    }
                 }
-                .padding(.vertical, 4)
-                .listRowBackground(Color.clear)
+                .frame(maxWidth: .infinity)
+                .padding(.horizontal)
             }
+            .frame(maxHeight: .infinity)
+            .foregroundColor(.black)
         }
         .listStyle(PlainListStyle())
     }
@@ -49,7 +57,6 @@ extension LocationsListView {
                     .font(.subheadline)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-
         }
     }
 }
