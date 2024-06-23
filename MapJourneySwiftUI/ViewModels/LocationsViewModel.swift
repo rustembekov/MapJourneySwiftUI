@@ -43,7 +43,20 @@ class LocationsViewModel: ObservableObject {
     func showNextLocation(location: Location) {
         withAnimation(.easeIn) {
             locationPoint = location
-            showLocationList.toggle()
+            showLocationList = false
         }
+    }
+    
+    func buttonNextLocationPressed() {
+        guard let currentIndex = locations.firstIndex(where: { $0 == locationPoint }) else { return }
+        let nextIndex = currentIndex + 1
+        guard locations.indices.contains(nextIndex) else {
+            guard let firstLocation = locations.first else { return }
+            showNextLocation(location: firstLocation)
+            return
+        }
+        let nextLocation = locations[nextIndex]
+        showNextLocation(location: nextLocation)
+        
     }
 }
