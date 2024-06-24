@@ -2,9 +2,11 @@
 
 MapJourney is an innovative iOS application designed to enhance your travel and exploration experiences. Developed using SwiftUI, MapJourney leverages the power of modern iOS technologies like MVVM architecture, MapKit, and immersive animations to provide a seamless and visually appealing user experience.
 
-![MapJourney Release](https://github.com/rustembekov/MapJourneySwiftUI/blob/main/MapJourneySwiftUI/Assets.xcassets/Release/release-1.imageset/Baiterek%2C%20Astana.png)
-![MapJourney Release](https://github.com/rustembekov/MapJourneySwiftUI/blob/main/MapJourneySwiftUI/Assets.xcassets/Release/release-2.imageset/Baiterek.png)
-
+<div style="display: flex; flex-direction: row; gap: 10px;">
+     <img src="https://github.com/rustembekov/MapJourneySwiftUI/blob/main/MapJourneySwiftUI/Assets.xcassets/Release/release-1.imageset/Baiterek%2C%20Astana.png" width="400">
+     <img src="https://github.com/rustembekov/MapJourneySwiftUI/blob/main/MapJourneySwiftUI/Assets.xcassets/Release/release-2.imageset/Baiterek.png" width="400">
+   </div>
+   
 ## Key Features
 
 1. **Interactive Map View 🗺️**
